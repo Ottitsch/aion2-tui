@@ -1,0 +1,4 @@
+# Npcap SDK import libraries for the pcap crate on Windows (wpcap.lib, Packet.lib).
+# The SDK may not be redistributed, so it is not in git: unzip it into vendor/npcap-sdk (see README).
+[env]
+LIBPCAP_LIBDIR = { value = "vendor/npcap-sdk/Lib/x64", relative = true }

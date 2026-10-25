@@ -1,0 +1,41 @@
+[package]
+name = "aion"
+description = "The Aion 2 tools in one terminal: DPS meter, Hidden Cube alert, kina tracker and hold buttons"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "aion"
+path = "src/main.rs"
+
+[dependencies]
+aion-net = { path = "../aion-net" }
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+cube-core = { path = "../cube-core" }
+kina-core = { path = "../kina-core" }
+meter-core = { path = "../meter-core" }
+parking_lot = "0.12"
+pcap = "2"
+pcap-file = "2"
+ratatui = "0.29"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.62.2", features = ["Win32_Media_Audio", "Win32_System_Com", "Win32_System_Com_StructuredStorage", "Win32_System_Variant"] }
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Console",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Threading",
+    "Win32_UI_Input",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+] }

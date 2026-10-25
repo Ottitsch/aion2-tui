@@ -1,0 +1,14 @@
+/target
+# captures contain your own traffic, including character names
+/captures/
+*.pcap
+*.pcapng
+# third party binary (VIIPER), see README
+/bin/
+# shortcuts hold this PC's paths and account id; make-shortcut.cmd creates AION.lnk
+*.lnk
+# these replay the local captures above and pin the real player names in them
+crates/meter-core/tests/replay_encounters.rs
+crates/meter-core/tests/replay_fixture.rs
+# the Npcap SDK may not be redistributed, see README
+vendor/npcap-sdk/
